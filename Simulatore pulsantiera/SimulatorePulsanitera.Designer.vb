@@ -428,6 +428,7 @@ Partial Class frmSim
         '
         'Timer1
         '
+        Me.Timer1.Enabled = True
         '
         'Button19
         '

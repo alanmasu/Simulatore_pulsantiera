@@ -7,14 +7,18 @@
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Dim data As String = ImpostazioniPorta.ricevi()
-        frmSim.Timer1.Stop()
-        If frmSim.connesso = True Then
-            If data <> "" Then
-                TextBox2.Text += data
-                TextBox2.SelectionStart = Len(TextBox2.Text)
-                TextBox2.ScrollToCaret()
+        If frmSim.connesso Then
+            'Dim data As String = ImpostazioniPorta.ricevi()
+            'frmSim.Timer1.Stop()
+            If frmSim.connesso = True Then
+                If frmSim.dataFromSerial <> "" Then
+                    TextBox2.Text += frmSim.dataFromSerial
+                    TextBox2.SelectionStart = Len(TextBox2.Text)
+                    TextBox2.ScrollToCaret()
+                End If
             End If
+            'Else
+            '    'Timer1.Stop()
         End If
     End Sub
 

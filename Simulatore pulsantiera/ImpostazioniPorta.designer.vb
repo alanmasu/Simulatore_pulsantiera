@@ -42,9 +42,10 @@ Partial Class ImpostazioniPorta
         '
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(12, 140)
+        Me.Label3.Location = New System.Drawing.Point(16, 172)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(332, 31)
+        Me.Label3.Size = New System.Drawing.Size(443, 38)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Disconnesso"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -53,36 +54,40 @@ Partial Class ImpostazioniPorta
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 98)
+        Me.Label2.Location = New System.Drawing.Point(16, 121)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(170, 24)
+        Me.Label2.Size = New System.Drawing.Size(217, 29)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Stato connessione:"
         '
         'Button4
         '
         Me.Button4.Enabled = False
-        Me.Button4.Location = New System.Drawing.Point(15, 51)
+        Me.Button4.Location = New System.Drawing.Point(20, 63)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(318, 33)
+        Me.Button4.Size = New System.Drawing.Size(424, 41)
         Me.Button4.TabIndex = 13
         Me.Button4.Text = "Chiudi sessione"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(258, 16)
+        Me.Button3.Location = New System.Drawing.Point(344, 20)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(100, 28)
         Me.Button3.TabIndex = 12
         Me.Button3.Text = "Ricarica"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(177, 16)
+        Me.Button2.Location = New System.Drawing.Point(236, 20)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(100, 28)
         Me.Button2.TabIndex = 11
         Me.Button2.Text = "Connetti"
         Me.Button2.UseVisualStyleBackColor = True
@@ -90,31 +95,33 @@ Partial Class ImpostazioniPorta
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(66, 18)
+        Me.ComboBox1.Location = New System.Drawing.Point(88, 22)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(105, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(139, 24)
         Me.ComboBox1.TabIndex = 10
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 16)
+        Me.Label1.Location = New System.Drawing.Point(16, 20)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 18)
+        Me.Label1.Size = New System.Drawing.Size(58, 24)
         Me.Label1.TabIndex = 16
         Me.Label1.Text = "Porta:"
         '
         'Timer1
         '
-        Me.Timer1.Interval = 10000
+        Me.Timer1.Interval = 1500
         '
         'ImpostazioniPorta
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(356, 213)
+        Me.ClientSize = New System.Drawing.Size(475, 262)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -123,6 +130,7 @@ Partial Class ImpostazioniPorta
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ComboBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "ImpostazioniPorta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Impostazioni porta seriale pulsantiera"

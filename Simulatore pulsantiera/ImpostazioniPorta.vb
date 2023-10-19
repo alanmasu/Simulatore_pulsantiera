@@ -47,22 +47,11 @@ Public Class ImpostazioniPorta
         Label3.ForeColor = Color.Red
         frmSim.Text = "Simulatore pulsantiera"
     End Sub
-    Function ricevi() As String
-        Dim dati As String
-        Try
-            dati = frmSim.SerialPort1.ReadExisting
-            If dati <> Nothing Then
-                Return dati
-            End If
-            Return ""
-        Catch ex As Exception
-            Return "Errore: " & ex.Message
-        End Try
-    End Function
+
     Dim scaduta As Boolean = False
     Private Sub TimerSerial_Tick(sender As Object, e As EventArgs) Handles TimerSerial.Tick
         Dim str As String
-        str = ricevi()
+        str = frmSim.ricevi()
         'If str <> "" Then
         'If scaduta = False Then
         'If str = "Si sono Arduino!" & vbLf Then
