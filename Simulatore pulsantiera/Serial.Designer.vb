@@ -22,8 +22,6 @@ Partial Class Serial
     'Non modificarla mediante l'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -32,13 +30,10 @@ Partial Class Serial
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
-        'Timer1
-        '
-        '
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(17, 16)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(403, 22)
         Me.TextBox1.TabIndex = 0
@@ -46,7 +41,7 @@ Partial Class Serial
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(17, 64)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.TextBox2.MaximumSize = New System.Drawing.Size(403, 182)
         Me.TextBox2.MinimumSize = New System.Drawing.Size(403, 182)
         Me.TextBox2.Multiline = True
@@ -58,30 +53,30 @@ Partial Class Serial
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(429, 12)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Location = New System.Drawing.Point(429, 13)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 28)
+        Me.Button1.Size = New System.Drawing.Size(89, 28)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Invia"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(429, 107)
+        Me.Button2.Location = New System.Drawing.Point(429, 95)
         Me.Button2.Margin = New System.Windows.Forms.Padding(4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 28)
+        Me.Button2.Size = New System.Drawing.Size(89, 28)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "serialON"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(429, 143)
+        Me.Button3.Location = New System.Drawing.Point(429, 131)
         Me.Button3.Margin = New System.Windows.Forms.Padding(4)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 28)
+        Me.Button3.Size = New System.Drawing.Size(89, 28)
         Me.Button3.TabIndex = 4
         Me.Button3.Text = "serialOFF"
         Me.Button3.UseVisualStyleBackColor = True
@@ -92,7 +87,7 @@ Partial Class Serial
         Me.ComboBox1.Items.AddRange(New Object() {"none", "\n", "\r", "\rn"})
         Me.ComboBox1.Location = New System.Drawing.Point(429, 64)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(75, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(89, 24)
         Me.ComboBox1.TabIndex = 5
         Me.ComboBox1.Text = "\n"
         '
@@ -109,7 +104,7 @@ Partial Class Serial
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Serial"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Serial pulsantiera"
@@ -117,8 +112,6 @@ Partial Class Serial
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Button1 As Button

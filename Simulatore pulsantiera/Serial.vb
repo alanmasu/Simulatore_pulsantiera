@@ -1,24 +1,7 @@
 ﻿Public Class Serial
     Private Sub Serial_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer1.Start()
         If frmSim.connesso = True Then
             Text = "Serial - ON " & frmSim.SerialPort1.PortName
-        End If
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If frmSim.connesso Then
-            'Dim data As String = ImpostazioniPorta.ricevi()
-            'frmSim.Timer1.Stop()
-            If frmSim.connesso = True Then
-                If frmSim.dataFromSerial <> "" Then
-                    TextBox2.Text += frmSim.dataFromSerial & vbLf
-                    TextBox2.SelectionStart = Len(TextBox2.Text)
-                    TextBox2.ScrollToCaret()
-                End If
-            End If
-            'Else
-            '    'Timer1.Stop()
         End If
     End Sub
 
@@ -26,11 +9,6 @@
         If frmSim.connesso = True Then
             frmSim.msgList.Enqueue(TextBox1.Text & getTerm())
         End If
-    End Sub
-
-    Private Sub Serial_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        Timer1.Stop()
-        frmSim.Timer1.Start()
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click

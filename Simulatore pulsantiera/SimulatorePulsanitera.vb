@@ -7,125 +7,6 @@ Public Class frmSim
     Public dataFromSerial As String
     Public msgList As New Queue(Of String)
 
-    'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-    '    Dim name As String = "pt1_p"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
-    '    Dim name As String = "pt1_m"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-    '    Dim name As String = "pt_r"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
-    '    Dim name As String = "pt2_p"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-    '    Dim name As String = "pt2_m"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-    '    Dim name As String = "p"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
-    '    Dim name As String = "s"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-    '    Dim name As String = "t_p"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-    '    Dim name As String = "t_r"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-    '    Dim name As String = "t_m"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-    '    Dim name As String = "min_p"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button9_Click(sender As Object, e As EventArgs)
-    '    Dim name As String = "min_r"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-    '    Dim name As String = "min_m"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
-    '    Dim name As String = "sec_p"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-    '    Dim name As String = "sec_r"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
-    '    Dim name As String = "sec_m"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
-    'Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-    '    Dim name As String = "r"
-    '    If connesso = True Then
-    '        SerialPort1.Write(name & ".1" & "." & shift & vbLf)
-    '    End If
-    'End Sub
-
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
         ImpostazioniPorta.Location = New Point(Location.X + Size.Width, Location.Y)
         ImpostazioniPorta.Show()
@@ -158,14 +39,6 @@ Public Class frmSim
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim toSend, toSendint As String
         dataFromSerial = ricevi()
-        'frmSim.Timer1.Stop()
-        'If connesso = True Then
-        '    If dataFromSerial <> "" Then
-        '        Serial.TextBox2.Text += dataFromSerial
-        '        Serial.TextBox2.SelectionStart = Len(Serial.TextBox2.Text)
-        '        Serial.TextBox2.ScrollToCaret()
-        '    End If
-        'End If
 
         If msgList.Count > 0 Then
             toSend = msgList.Dequeue()
@@ -178,8 +51,6 @@ Public Class frmSim
                 toSendint += " + CR LF"
             End If
             Serial.TextBox2.Text += "Sended " + toSendint + vbCrLf
-            Serial.TextBox2.SelectionStart = Len(Serial.TextBox2.Text)
-            Serial.TextBox2.ScrollToCaret()
             If connesso Then
                 SerialPort1.Write(toSend)
             End If
@@ -190,21 +61,25 @@ Public Class frmSim
             Next
             toSend += CStr(states(16))
             If connesso Then
-                'toSend += vbCr
+                'Writing on Serial
                 SerialPort1.WriteLine(toSend)
+
+                'Writing recived data to Serial Form
+                If dataFromSerial <> "" And Serial.Visible = True Then
+                    Serial.TextBox2.Text += dataFromSerial
+                End If
             Else
                 toSend += vbLf
                 Serial.TextBox2.Text += toSend
-                Serial.TextBox2.SelectionStart = Len(Serial.TextBox2.Text)
-                Serial.TextBox2.ScrollToCaret()
             End If
         End If
+        Serial.TextBox2.SelectionStart = Len(Serial.TextBox2.Text)
+        Serial.TextBox2.ScrollToCaret()
     End Sub
     Function ricevi() As String
         Dim dati As String
         Try
-            dati = SerialPort1.ReadLine
-            SerialPort1.DiscardInBuffer()
+            dati = SerialPort1.ReadExisting
             If dati <> Nothing Then
                 Return dati
             End If

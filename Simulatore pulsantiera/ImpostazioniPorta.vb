@@ -13,13 +13,11 @@ Public Class ImpostazioniPorta
     'btnConnetti
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         frmSim.SerialPort1.Close()
-        Serial.Timer1.Stop()
         If ComboBox1.Text Is "" Then
             MsgBox("La porta non può essere vuota!!!", MsgBoxStyle.Critical, "Errore")
         Else
             Try
                 'inizializzo la porta seriale
-                'frmSim.SerialPort1.Encoding = System.Text.Encoding.UTF8
                 frmSim.SerialPort1.Encoding = System.Text.Encoding.Default
                 frmSim.SerialPort1.PortName = ComboBox1.Text
                 frmSim.SerialPort1.NewLine = vbLf
@@ -28,7 +26,7 @@ Public Class ImpostazioniPorta
                 frmSim.SerialPort1.Write("Sei Arduino?" & vbLf)
                 TimerSerial.Start()
                 scaduta = False
-                Timer1.Start()
+                ' Timer1.Start()
             Catch ex As Exception
                 frmSim.SerialPort1.Close()
                 MsgBox("Errore: " & ex.Message, MsgBoxStyle.Critical)
@@ -52,14 +50,9 @@ Public Class ImpostazioniPorta
 
     Dim scaduta As Boolean = False
     Private Sub TimerSerial_Tick(sender As Object, e As EventArgs) Handles TimerSerial.Tick
-        Dim str As String
-        str = frmSim.ricevi()
         'If str <> "" Then
         'If scaduta = False Then
         'If str = "Si sono Arduino!" & vbLf Then
-        If Serial.Visible = True Then
-            Serial.Timer1.Start()
-        End If
         frmSim.connesso = True
         Label3.Text = "Connesso"
         Label3.ForeColor = Color.Green
@@ -68,22 +61,13 @@ Public Class ImpostazioniPorta
         Button3.Enabled = False
         frmSim.Text = "Simulatore pulsantiera - ON " & frmSim.SerialPort1.PortName
         TimerSerial.Stop()
-        'MsgBox("Connessione avvenuta con successo!!", vbInformation)
+        MsgBox("Connessione avvenuta con successo!!", vbInformation)
         'Hide()
         'End If
         'Else
         'TimerSerial.Stop()
         'End If
         'End If
-    End Sub
-    Sub WaitSeconds(ByVal gapToWait As Integer)
-        Dim o As DateTime = DateTime.Now ' adesso
-        Dim istanteFinale As New DateTime(o.Year, o.Month, o.Day,
-                                          o.Hour, o.Minute,
-                                          o.Second + gapToWait)
-        Do While istanteFinale.Subtract(DateTime.Now).Milliseconds > 0
-            Application.DoEvents()
-        Loop
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
