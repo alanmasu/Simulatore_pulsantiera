@@ -55,6 +55,7 @@ Partial Class frmSim
         Me.Button9 = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Button20 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -478,6 +479,22 @@ Partial Class frmSim
         Me.Label10.TabIndex = 46
         Me.Label10.Text = "Reset"
         '
+        'Button20
+        '
+        Me.Button20.BackColor = System.Drawing.Color.LightGreen
+        Me.Button20.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime
+        Me.Button20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button20.ForeColor = System.Drawing.Color.Black
+        Me.Button20.Location = New System.Drawing.Point(17, 517)
+        Me.Button20.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(74, 41)
+        Me.Button20.TabIndex = 47
+        Me.Button20.Text = "OTA"
+        Me.Button20.UseVisualStyleBackColor = False
+        '
         'frmSim
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -485,6 +502,7 @@ Partial Class frmSim
         Me.AutoScroll = True
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(876, 571)
+        Me.Controls.Add(Me.Button20)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Button9)
@@ -556,4 +574,5 @@ Partial Class frmSim
     Friend WithEvents Button9 As Button
     Private WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents Button20 As Button
 End Class

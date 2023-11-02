@@ -19,8 +19,10 @@ Public Class ImpostazioniPorta
         Else
             Try
                 'inizializzo la porta seriale
+                'frmSim.SerialPort1.Encoding = System.Text.Encoding.UTF8
                 frmSim.SerialPort1.Encoding = System.Text.Encoding.Default
                 frmSim.SerialPort1.PortName = ComboBox1.Text
+                frmSim.SerialPort1.NewLine = vbLf
                 frmSim.SerialPort1.Open()
                 'invio un messaggio di verifica
                 frmSim.SerialPort1.Write("Sei Arduino?" & vbLf)
@@ -66,7 +68,7 @@ Public Class ImpostazioniPorta
         Button3.Enabled = False
         frmSim.Text = "Simulatore pulsantiera - ON " & frmSim.SerialPort1.PortName
         TimerSerial.Stop()
-        MsgBox("Connessione avvenuta con successo!!", vbInformation)
+        'MsgBox("Connessione avvenuta con successo!!", vbInformation)
         'Hide()
         'End If
         'Else
